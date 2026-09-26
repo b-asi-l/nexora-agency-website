@@ -220,37 +220,85 @@ function initThreeJS() {
     const sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
-    // Particles / Dust
-    const particleCount = 2000;
+    // Galactic Space Particles (Upgraded)
+    const particleCount = 3000;
     const particleGeometry = new THREE.BufferGeometry();
     const particlePositions = new Float32Array(particleCount * 3);
-    for(let i=0; i<particleCount * 3; i++) {
-        particlePositions[i] = (Math.random() - 0.5) * 40;
+    const particleColors = new Float32Array(particleCount * 3);
+    
+    const colorChoices = [
+        new THREE.Color(0xffffff), // White
+        new THREE.Color(0x4a90e2), // Blue
+        new THREE.Color(0x9b51e0)  // Purple
+    ];
+
+    for(let i=0; i<particleCount; i++) {
+        particlePositions[i*3] = (Math.random() - 0.5) * 50;
+        particlePositions[i*3+1] = (Math.random() - 0.5) * 50;
+        particlePositions[i*3+2] = (Math.random() - 0.5) * 50;
+
+        const randomColor = colorChoices[Math.floor(Math.random() * colorChoices.length)];
+        particleColors[i*3] = randomColor.r;
+        particleColors[i*3+1] = randomColor.g;
+        particleColors[i*3+2] = randomColor.b;
     }
+    
     particleGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+    particleGeometry.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+    
     const particleMaterial = new THREE.PointsMaterial({
-        size: 0.05,
-        color: 0xffffff,
+        size: 0.04,
+        vertexColors: true,
         transparent: true,
-        opacity: 0.4,
+        opacity: 0.6,
         blending: THREE.AdditiveBlending
     });
     const particles = new THREE.Points(particleGeometry, particleMaterial);
     scene.add(particles);
 
-    // Secondary Floating Abstract Objects
+    // Secondary Floating Abstract Objects (Space Debris/Anomalies)
     const secondaryShapes = [];
-    const wireMat = new THREE.MeshBasicMaterial({ color: 0x4a90e2, wireframe: true, transparent: true, opacity: 0.15 });
+    const wireMat = new THREE.MeshBasicMaterial({ color: 0x4a90e2, wireframe: true, transparent: true, opacity: 0.1 });
     
-    const torus = new THREE.Mesh(new THREE.TorusKnotGeometry(0.5, 0.15, 64, 8), wireMat);
-    torus.position.set(-4, 2, -2);
+    const torus = new THREE.Mesh(new THREE.TorusKnotGeometry(0.8, 0.1, 64, 8), wireMat);
+    torus.position.set(-5, 3, -4);
     scene.add(torus);
     secondaryShapes.push(torus);
 
-    const octa = new THREE.Mesh(new THREE.OctahedronGeometry(0.8), wireMat);
-    octa.position.set(5, -3, -4);
+    const octa = new THREE.Mesh(new THREE.OctahedronGeometry(1.2), wireMat);
+    octa.position.set(6, -4, -6);
     scene.add(octa);
     secondaryShapes.push(octa);
+
+    // Floating Web Development UI Artifacts (3D Wireframe Web Pages)
+    const artifactCount = 120;
+    const artifactGeometry = new THREE.PlaneGeometry(1.6, 1, 4, 3); // Grid pattern resembling a web layout
+    const artifactMaterial = new THREE.MeshBasicMaterial({ 
+        color: 0x4a90e2, 
+        wireframe: true, 
+        transparent: true, 
+        opacity: 0.15,
+        side: THREE.DoubleSide 
+    });
+    const artifacts = new THREE.InstancedMesh(artifactGeometry, artifactMaterial, artifactCount);
+    
+    const dummy = new THREE.Object3D();
+    for ( let i = 0; i < artifactCount; i ++ ) {
+        dummy.position.set(
+            (Math.random() - 0.5) * 40,
+            (Math.random() - 0.5) * 40,
+            (Math.random() - 0.5) * 30 - 10 // Pushed slightly back
+        );
+        // Align them slightly to look like floating screens
+        dummy.rotation.set(
+            (Math.random() - 0.5) * 0.5,
+            (Math.random() - 0.5) * 0.5,
+            0
+        );
+        dummy.updateMatrix();
+        artifacts.setMatrixAt(i, dummy.matrix);
+    }
+    scene.add(artifacts);
 
     camera.position.z = 6;
 
@@ -277,13 +325,21 @@ function initThreeJS() {
         sphere.rotation.y += 0.003;
         sphere.rotation.x += 0.002;
         
-        particles.rotation.y += 0.001;
-        particles.rotation.x += 0.0005;
+        particles.rotation.y += 0.0008;
+        particles.rotation.x += 0.0004;
+
+        artifacts.rotation.y += 0.0005;
+        artifacts.position.z += 0.01; // Slowly drift towards camera
+        
+        // Loop the floating web pages back when they pass the camera
+        if (artifacts.position.z > 20) {
+            artifacts.position.z = 0;
+        }
 
         secondaryShapes.forEach((s, index) => {
-            s.rotation.x += 0.002 * (index + 1);
-            s.rotation.y += 0.003 * (index + 1);
-            s.position.y += Math.sin(elapsedTime * 2 + index) * 0.005;
+            s.rotation.x += 0.001 * (index + 1);
+            s.rotation.y += 0.002 * (index + 1);
+            s.position.y += Math.sin(elapsedTime * 1.5 + index) * 0.003;
         });
 
         material.uniforms.uTime.value = elapsedTime;
