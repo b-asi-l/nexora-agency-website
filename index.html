@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Digital Experiences</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- GSAP & Lenis (Lenis requires styles included via JS or unpkg if needed, we'll use unpkg) -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+    <div class="grain-overlay"></div>
+
+    <!-- SECTION 01: LOADING SCREEN -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <h1 class="logo-text">NEXORA</h1>
+            <p class="small-text">DIGITAL EXPERIENCES</p>
+            <div class="loading-progress">
+                <span id="loading-percentage">00</span>%
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 02: FIXED HEADER -->
+    <header id="site-header">
+        <div class="header-logo">NEXORA</div>
+        <nav class="header-nav">
+            <a href="#work" class="magnetic">WORK</a>
+            <a href="#services" class="magnetic">SERVICES</a>
+            <a href="#process" class="magnetic">PROCESS</a>
+            <a href="#why-nexora" class="magnetic">ABOUT</a>
+        </nav>
+        <a href="#offer" class="header-btn magnetic">START A PROJECT →</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div id="canvas-container">
+        <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- SECTION 03: CINEMATIC HERO -->
+            <section id="hero" class="hero">
+                <div class="huge-bg-text">NEXORA</div>
+                <div class="hero-content">
+                    <p class="hero-eyebrow">WE BUILD</p>
+                    <h1 class="hero-title">
+                        <span class="word">DIGITAL</span><br>
+                        <span class="word">EXPERIENCES.</span>
+                    </h1>
+                    <p class="hero-subtext">
+                        "Websites that don't just look good.<br>
+                        They make businesses impossible to ignore."
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#work" class="btn btn-outline magnetic">EXPLORE OUR WORK →</a>
+                        <a href="#offer" class="btn btn-primary magnetic">START YOUR PROJECT →</a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span>SCROLL TO EXPLORE ↓</span>
+                </div>
+            </section>
+
+            <!-- SECTION 04: THE PROBLEM -->
+            <section id="problem" class="problem">
+                <div class="huge-bg-text" style="top: 20%;">STORY</div>
+                <div class="problem-container">
+                    <h2 class="problem-title-1 stagger-text">YOUR BUSINESS<br>HAS A <span class="outline-text">STORY.</span></h2>
+                    <h2 class="problem-title-2 stagger-text">BUT DOES YOUR WEBSITE<br>TELL IT?</h2>
+                    
+                    <div class="floating-interfaces">
+                        <div class="floating-item" data-speed="0.8">Instagram</div>
+                        <div class="floating-item" data-speed="1.2">WhatsApp</div>
+                        <div class="floating-item" data-speed="0.5">Google</div>
+                        <div class="floating-item" data-speed="1.5">Website</div>
+                    </div>
+                    
+                    <div class="problem-conclusion">
+                        <p class="problem-sub stagger-text">"Your customers are already online."</p>
+                        <h2 class="problem-title-3 stagger-text">GIVE THEM SOMEWHERE<br>WORTH STAYING.</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 05: SERVICE REVEAL -->
+            <section id="service-reveal" class="service-reveal">
+                <div class="reveal-container">
+                    <h2 class="reveal-text-1">WE DON'T JUST<br>BUILD WEBSITES.</h2>
+                    <h2 class="reveal-text-2">WE BUILD</h2>
+                    <h2 class="reveal-text-3">EXPERIENCES.</h2>
+                    <div class="reveal-words">
+                        <span>DESIGN</span>
+                        <span>MOTION</span>
+                        <span>3D</span>
+                        <span>INTERACTION</span>
+                        <span>CONVERSION</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 06: SERVICES -->
+            <section id="services" class="services">
+                <div class="services-wrapper">
+                    <div class="services-scroll">
+                        <div class="service-card">
+                            <span class="service-num">01</span>
+                            <h3>BUSINESS WEBSITES</h3>
+                            <p>Professional digital presence tailored to your industry.</p>
+                            <div class="card-visual visual-1"></div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-num">02</span>
+                            <h3>3D EXPERIENCES</h3>
+                            <p>Immersive 3D environments that captivate users.</p>
+                            <div class="card-visual visual-2"></div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-num">03</span>
+                            <h3>MOTION & SCROLL</h3>
+                            <p>Cinematic scroll-driven storytelling.</p>
+                            <div class="card-visual visual-3"></div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-num">04</span>
+                            <h3>E-COMMERCE</h3>
+                            <p>High-conversion online stores with premium UX.</p>
+                            <div class="card-visual visual-4"></div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-num">05</span>
+                            <h3>AI EXPERIENCES</h3>
+                            <p>Intelligent chatbots and automated interactions.</p>
+                            <div class="card-visual visual-5"></div>
+                        </div>
+                        <div class="service-card">
+                            <span class="service-num">06</span>
+                            <h3>LANDING PAGES</h3>
+                            <p>Focused pages designed to turn clicks into clients.</p>
+                            <div class="card-visual visual-6"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 07: FROM IDEA TO EXPERIENCE -->
+            <section id="idea-to-exp" class="idea-to-exp">
+                <div class="css-orb" style="top: 20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);"></div>
+                <div class="idea-container">
+                    <h2 class="idea-text stagger-text">FROM AN IDEA</h2>
+                    <div class="browser-mockup">
+                        <div class="browser-header">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="browser-content">
+                            <div class="step-text" id="step-wireframe">WIRE FRAME</div>
+                            <div class="step-text" id="step-design">DESIGN</div>
+                            <div class="step-text" id="step-motion">MOTION</div>
+                            <div class="step-text" id="step-3d">3D</div>
+                            <div class="step-text" id="step-interaction">INTERACTION</div>
+                            <div class="step-text" id="step-final">FINAL WEBSITE</div>
+                            
+                            <div class="browser-visual"></div>
+                        </div>
+                    </div>
+                    <h2 class="idea-text final">TO AN EXPERIENCE.</h2>
+                </div>
+            </section>
+
+            <!-- SECTION 08: OUR PROCESS -->
+            <section id="process" class="process">
+                <div class="process-container">
+                    <div class="process-line"></div>
+                    
+                    <div class="process-step">
+                        <h3>DISCOVER</h3>
+                        <p>We understand your business,<br>audience and objectives.</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>DEFINE</h3>
+                        <p>We create the digital strategy.</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>DESIGN</h3>
+                        <p>We build the visual identity<br>and user experience.</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>DEVELOP</h3>
+                        <p>We turn the experience<br>into a functional website.</p>
+                    </div>
+                    <div class="process-step">
+                        <h3>LAUNCH</h3>
+                        <p>We deploy, optimise<br>and measure.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 09: SELECTED WORK -->
+            <section id="work" class="work">
+                <div class="work-header">
+                    <h2 class="stagger-text">SELECTED WORK</h2>
+                </div>
+                
+                <div class="work-project">
+                    <div class="project-info">
+                        <h2>PROJECT 01: TERRAIN PROTECTION</h2>
+                        <p class="category">Category: Security • Facility Management</p>
+                        <p class="status">Status: CLIENT PROJECT</p>
+                        <p class="desc">"An interactive corporate website designed to transform a traditional security business into a modern digital brand."</p>
+                        <a href="https://terrainprotection.in/" target="_blank" class="btn btn-outline magnetic">VIEW LIVE WEBSITE →</a>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #1a1a1a, #333);">TP</div>
+                    </div>
+                </div>
+
+                <div class="work-project">
+                    <div class="project-info">
+                        <h2>PROJECT 02: CALIGO 2026</h2>
+                        <p class="category">Category: Management Fest • Event Experience</p>
+                        <p class="status">Status: PROJECT</p>
+                        <p class="desc">"An immersive digital experience designed for a management fest."</p>
+                        <a href="#" class="btn btn-outline magnetic">VIEW PROJECT →</a>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #0a0a0a, #2a2a2a);">C26</div>
+                    </div>
+                </div>
+
+                <div class="work-project">
+                    <div class="project-info">
+                        <h2>PROJECT 03: GCA CHEMICALS</h2>
+                        <p class="category">Category: Agriculture • Corporate</p>
+                        <p class="status">Status: CONCEPT / PROTOTYPE</p>
+                        <p class="desc">"An interactive agricultural website concept using scroll-driven plant-growth storytelling."</p>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #112211, #224422);">GCA</div>
+                    </div>
+                </div>
+
+                <div class="work-project">
+                    <div class="project-info">
+                        <h2>PROJECT 04: TRIPIN</h2>
+                        <p class="category">Category: Travel • Digital Experience</p>
+                        <p class="status">Status: PROJECT / PROTOTYPE</p>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #111122, #222244);">TRP</div>
+                    </div>
+                </div>
+
+                <div class="work-project">
+                    <div class="project-info">
+                        <h2>PROJECT 05: ERYBL</h2>
+                        <p class="category">Category: Custom PCs • Technology</p>
+                        <p class="status">Status: PROJECT / PROTOTYPE</p>
+                    </div>
+                    <div class="project-visual">
+                        <div class="placeholder-img" style="background: linear-gradient(45deg, #221111, #442222);">ERY</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: CASE STUDY -->
+            <section id="case-study" class="case-study">
+                <div class="css-orb" style="top: 50%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(239,68,68,0.1) 0%, rgba(0,0,0,0) 70%);"></div>
+                <div class="case-study-hero">
+                    <h2 class="stagger-text">TERRAIN<br>PROTECTION</h2>
+                    <h3 class="stagger-text">SECURITY,<br>REIMAGINED.</h3>
+                </div>
+                
+                <div class="case-study-visuals">
+                    <div class="visual-mockup desktop"></div>
+                    <div class="visual-mockup mobile"></div>
+                </div>
+
+                <div class="case-study-metrics">
+                    <div class="metric">
+                        <h4>20+</h4>
+                        <p>YEARS</p>
+                    </div>
+                    <div class="metric">
+                        <h4>4,200+</h4>
+                        <p>TRAINED PERSONNEL</p>
+                    </div>
+                    <div class="metric">
+                        <h4>12</h4>
+                        <p>STATES</p>
+                    </div>
+                    <div class="metric">
+                        <h4>800+</h4>
+                        <p>ACTIVE SITES</p>
+                    </div>
+                </div>
+
+                <div class="case-study-conclusion">
+                    <p>"FROM BUSINESS INFORMATION<br>TO DIGITAL EXPERIENCE."</p>
+                    <a href="https://terrainprotection.in/" target="_blank" class="btn btn-primary magnetic">VISIT LIVE WEBSITE →</a>
+                </div>
+            </section>
+
+            <!-- SECTION 11: BEFORE / AFTER -->
+            <section id="before-after" class="before-after">
+                <div class="split-screen">
+                    <div class="split left">
+                        <h2 class="stagger-text">BEFORE</h2>
+                        <p>Traditional digital presence</p>
+                    </div>
+                    <div class="split right">
+                        <h2 class="stagger-text">AFTER</h2>
+                        <p>Interactive digital experience</p>
+                    </div>
+                    <div class="split-divider"></div>
+                </div>
+                <div class="split-text">
+                    <h2 class="diff-text-1 stagger-text">THE DIFFERENCE<br>ISN'T JUST DESIGN.</h2>
+                    <h2 class="diff-text-2 stagger-text">IT'S PERCEPTION.</h2>
+                </div>
+            </section>
+
+            <!-- SECTION 12: WHY NEXORA -->
+            <section id="why-nexora" class="why-nexora">
+                <div class="why-grid">
+                    <div class="why-card">
+                        <span>01</span>
+                        <h3>CUSTOM</h3>
+                        <p>No generic templates.</p>
+                    </div>
+                    <div class="why-card">
+                        <span>02</span>
+                        <h3>INTERACTIVE</h3>
+                        <p>Motion where it matters.</p>
+                    </div>
+                    <div class="why-card">
+                        <span>03</span>
+                        <h3>RESPONSIVE</h3>
+                        <p>Designed for every screen.</p>
+                    </div>
+                    <div class="why-card">
+                        <span>04</span>
+                        <h3>CONVERSION</h3>
+                        <p>Designed to turn visitors<br>into enquiries.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 13: PRICING -->
+            <section id="pricing" class="pricing">
+                <div class="css-orb" style="top: -10%; left: 30%; width: 80vw; height: 40vw; background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, rgba(0,0,0,0) 70%);"></div>
+                <h2 class="pricing-heading stagger-text">CHOOSE YOUR<br>EXPERIENCE.</h2>
+                
+                <div class="pricing-cards">
+                    <div class="price-card">
+                        <h3>STARTER</h3>
+                        <p class="price">₹4,999</p>
+                        <p class="desc">Professional online presence.</p>
+                        <ul>
+                            <li>up to 3 pages</li>
+                            <li>responsive design</li>
+                            <li>contact integration</li>
+                            <li>basic SEO</li>
+                            <li>basic animations</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-card featured">
+                        <h3>PROFESSIONAL</h3>
+                        <p class="price">₹9,999</p>
+                        <p class="desc">For growing businesses.</p>
+                        <ul>
+                            <li>5–7 pages</li>
+                            <li>custom UI/UX</li>
+                            <li>advanced animations</li>
+                            <li>WhatsApp integration</li>
+                            <li>SEO setup</li>
+                            <li>analytics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="price-card">
+                        <h3>EXPERIENCE</h3>
+                        <p class="price">₹19,999+</p>
+                        <p class="desc">For businesses wanting something exceptional.</p>
+                        <ul>
+                            <li>custom 3D</li>
+                            <li>advanced scroll experiences</li>
+                            <li>interactive storytelling</li>
+                            <li>AI integration</li>
+                            <li>advanced animations</li>
+                            <li>premium UI/UX</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="pricing-consult">
+                    <p>NOT SURE WHAT YOU NEED?</p>
+                    <a href="#offer" class="btn btn-outline magnetic">GET A FREE CONSULTATION →</a>
+                </div>
+            </section>
+
+            <!-- SECTION 14: THE OFFER -->
+            <section id="offer" class="offer">
+                <h2 class="offer-title stagger-text">
+                    YOUR WEBSITE<br>
+                    COULD LOOK<br>
+                    LIKE THIS.
+                </h2>
+                
+                <div class="offer-content">
+                    <p>Tell us about your business.</p>
+                    <p class="highlight">We'll create a</p>
+                    <h3 class="highlight-large">FREE HOMEPAGE CONCEPT.</h3>
+                    
+                    <a href="#" class="btn btn-primary magnetic">GET MY FREE CONCEPT →</a>
+                    
+                    <div class="qr-container">
+                        <div class="qr-placeholder"></div>
+                        <p>SCAN TO START</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 15: FINAL CTA -->
+            <section id="final-cta" class="final-cta">
+                <p class="small-cta">YOUR BUSINESS DESERVES<br>MORE THAN A WEBSITE.</p>
+                <h2 class="huge-cta">IT DESERVES<br>AN EXPERIENCE.</h2>
+                <a href="#offer" class="btn btn-primary magnetic cta-btn">START A PROJECT →</a>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- SECTION 16: FOOTER -->
+    <footer id="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <h2>NEXORA</h2>
+                <p>Your Business.<br>Reimagined on the Web.</p>
+            </div>
+            
+            <div class="footer-links">
+                <nav>
+                    <a href="#work">WORK</a>
+                    <a href="#services">SERVICES</a>
+                    <a href="#process">PROCESS</a>
+                    <a href="#why-nexora">ABOUT</a>
+                    <a href="#contact">CONTACT</a>
+                </nav>
+            </div>
+            
+            <div class="footer-social">
+                <nav>
+                    <a href="#">INSTAGRAM</a>
+                    <a href="#">LINKEDIN</a>
+                    <a href="#">FACEBOOK</a>
+                </nav>
+            </div>
+            
+            <div class="footer-contact">
+                <nav>
+                    <a href="#">EMAIL</a>
+                    <a href="#">WHATSAPP</a>
+                </nav>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 NEXORA<br>ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
