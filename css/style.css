@@ -345,6 +345,47 @@ header.scrolled {
     50% { transform: translate(-50%, 10px); }
 }
 
+/* MARQUEE SECTION */
+.marquee-section {
+    position: relative;
+    width: 100vw;
+    padding: 10vh 0;
+    overflow: hidden;
+    background: transparent;
+    z-index: 10;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 15vw, #000 calc(100% - 15vw), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 15vw, #000 calc(100% - 15vw), transparent 100%);
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    font-size: 6vw;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    will-change: transform;
+}
+
+.marquee-content .dot {
+    width: 1.5vw;
+    height: 1.5vw;
+    background: #4a90e2;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 20px #4a90e2;
+}
+
 /* Section 04: The Problem */
 .problem {
     min-height: 100vh;

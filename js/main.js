@@ -446,6 +446,17 @@ function initAnimations() {
         });
     });
 
+    // Marquee Infinite Scroll
+    const marqueeContent = document.querySelector('.marquee-content');
+    if (marqueeContent) {
+        gsap.to(marqueeContent, {
+            xPercent: -50,
+            ease: "none",
+            duration: 15,
+            repeat: -1
+        });
+    }
+
     // 1. Hero Text Spread on Scroll
     gsap.to('.hero-title .word', {
         letterSpacing: "15px",
