@@ -179,9 +179,9 @@ Git Push -> Cloudflare CI/CD -> npm run build -> /out Static Export -> Global Ed
 │       ├── ananthapadmanabhan.jpg  # Ananthapadmanabhan S. (CMO)
 │       ├── basil_mathew.jpg        # Basil Mathew (MD)
 │       └── abhai_prathap.jpg       # Abhai Prathap (CFO)
-├── next.config.js           # Static export & package transpilation config
-├── wrangler.jsonc           # Cloudflare deployment config with static assets mapping
-├── worker.js                # Cloudflare Worker static asset proxy entrypoint
+├── next.config.js           # Next.js standalone output & package transpilation config
+├── open-next.config.ts      # Cloudflare OpenNext adapter configuration
+├── wrangler.jsonc           # Cloudflare Worker deployment config with .open-next assets
 ├── tailwind.config.js       # Color tokens, neon gradients & layout presets
 └── package.json             # Project dependencies & build scripts
 ```
