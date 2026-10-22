@@ -14,11 +14,11 @@ PixelCraft is a high-performance 3D WebGL digital agency website built with Next
 - **Case Studies Grid (`#usecases`)**: High-conversion bento cards for E-Commerce, SaaS, Portfolios, and Brand Worlds.
 - **Transparent Pricing Packages (`#pricing`)**: Monthly vs. Annual switcher (with 20% discount badge), feature checklists, and direct order links.
 - **Executive Leadership Team (`#team`)**:
-  1. **Abhai Prathap** — Chief Executive Officer (CEO)
-  2. **Ananthapadmanabhan S.** — Operations and Logistics Manager
-  3. **Amal Raj** — Chief Marketing Officer (CMO)
-  4. **Alen Mathews** — Managing Director (MD)
-  5. **Basil Mathew** — Chief Financial Officer (CFO)
+  1. **Amal Raj** — Chief Executive Officer (CEO & Co-Founder)
+  2. **Alen Mathews** — Operation & Logistics Manager
+  3. **Ananthapadmanabhan S.** — Chief Marketing Officer (CMO & Growth Director)
+  4. **Basil Mathew** — Managing Director (MD)
+  5. **Abhai Prathap** — Chief Financial Officer (CFO & Head of Capital)
 - **Direct Contact & Social Media Hub (`#contact`)**:
   - Live interactive project inquiry form
   - Direct WhatsApp and Email links
@@ -31,29 +31,28 @@ PixelCraft is a high-performance 3D WebGL digital agency website built with Next
 
 ---
 
-## ⚡ Cloudflare Pages Deployment (Step-by-Step)
+## ⚡ Cloudflare Deployment Options
 
-The project is already pre-configured for static export (`output: 'export'` in `next.config.js`).
+The project is pre-configured with static export (`output: 'export'` in `next.config.js`), a root `worker.js` static proxy, `wrangler.json`, and an automatic patch script that prevents unwanted OpenNext migration.
 
-### Method 1: Connect via GitHub (Automatic CI/CD — Recommended)
-1. Log in to your [Cloudflare Dashboard](https://dash.cloudflare.com/).
-2. In the left sidebar, navigate to **Compute (Workers & Pages)** > **Pages**.
-3. Click **Connect to Git** and choose **GitHub**.
-4. Select your repository: `b-asi-l/nexora-agency-website`.
-5. In the Build Configuration settings:
-   - **Framework preset**: `Next.js (Static HTML Export)` or `None`
+### Option A: Cloudflare Workers (CI/CD via GitHub)
+If you connected your repository to Cloudflare Workers:
+1. In Cloudflare Dashboard -> **Workers & Pages** -> Select **pixelcraft** -> **Settings** -> **Builds**.
+2. Set the build configurations:
+   - **Build command**: `npm run build`
+   - **Deploy command**: `npx wrangler deploy --no-autoconfig` *(or `npm run deploy`)*
+3. Click **Save**.
+
+### Option B: Cloudflare Pages (Recommended Zero-Config)
+If deploying via Cloudflare Pages:
+1. Navigate to **Workers & Pages** > **Create application** > **Pages** > **Connect to Git**.
+2. Select `b-asi-l/nexora-agency-website`.
+3. Set:
+   - **Framework preset**: `None` or `Next.js (Static HTML Export)`
    - **Build command**: `npm run build`
    - **Build output directory**: `out`
-   - **Root directory**: `/` (leave default)
-6. Click **Save and Deploy**.
-7. Cloudflare will automatically build and publish your website globally to a free `*.pages.dev` subdomain with automatic SSL!
-
-### Method 2: Direct Wrangler CLI Deployment
-If you prefer deploying directly from your terminal:
-```bash
-# Install Wrangler globally or run via npx
-npx wrangler pages deploy out --project-name=pixelcraft-agency
-```
+   - **Deploy command**: *(Leave blank)*
+4. Click **Save and Deploy**.
 
 ---
 

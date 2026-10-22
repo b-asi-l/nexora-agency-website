@@ -5,26 +5,27 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "wrangler deploy --no-autoconfig"
+    "deploy": "wrangler deploy --no-autoconfig",
+    "postinstall": "node scripts/patch-wrangler.js"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "framer-motion": "^11.11.0",
+    "gsap": "^3.12.5",
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "three": "^0.170.0",
-    "@react-three/fiber": "^9.0.0",
-    "@react-three/drei": "^10.0.0",
-    "framer-motion": "^11.11.0",
-    "gsap": "^3.12.5"
+    "wrangler": "^4.151.3"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/react": "^19",
     "@types/node": "^20",
+    "@types/react": "^19",
     "@types/three": "^0.170.0",
-    "tailwindcss": "^3.4.14",
-    "postcss": "^8",
     "autoprefixer": "^10",
-    "wrangler": "^4.151.3"
+    "postcss": "^8",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5"
   }
 }
