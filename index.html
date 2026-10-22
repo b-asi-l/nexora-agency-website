@@ -1,524 +1,385 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXORA | Digital Experiences</title>
+    <title>PixelCraft | Premium Website Design & Development</title>
+    <meta name="description" content="PixelCraft creates premium websites, interactive experiences and high-performance digital experiences for modern brands.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- CSS -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#05020F',
+                        secondary: '#0A0618',
+                        surface: '#111021',
+                        accent1: '#8B5CF6',
+                        accent2: '#EC4899',
+                        accent3: '#22D3EE',
+                        accent4: '#FFB6A3',
+                        textMain: '#FFFFFF',
+                        textMuted: '#A7A3B8'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- GSAP & Lenis (Lenis requires styles included via JS or unpkg if needed, we'll use unpkg) -->
-    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.20/dist/lenis.css">
-</head>
-<body>
-
-    <div class="cursor-glow"></div>
-    <div class="grain-overlay"></div>
-
-    <!-- SECTION 01: LOADING SCREEN -->
-    <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
-            <h1 class="logo-text">NEXORA</h1>
-            <p class="small-text">DIGITAL EXPERIENCES</p>
-            <div class="loading-progress">
-                <span id="loading-percentage">00</span>%
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 02: FIXED HEADER -->
-    <header id="site-header">
-        <div class="header-logo">NEXORA</div>
-        <nav class="header-nav">
-            <a href="#work" class="magnetic">WORK</a>
-            <a href="#services" class="magnetic">SERVICES</a>
-            <a href="#process" class="magnetic">PROCESS</a>
-            <a href="#why-nexora" class="magnetic">ABOUT</a>
-        </nav>
-        <a href="#offer" class="header-btn magnetic">START A PROJECT →</a>
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
-    <div id="canvas-container">
-        <canvas id="hero-canvas"></canvas>
-    </div>
-
-    <main id="smooth-wrapper">
-        <div id="smooth-content">
-
-            <!-- SECTION 03: CINEMATIC HERO -->
-            <section id="hero" class="hero">
-                <div class="huge-bg-text">NEXORA</div>
-                <div class="hero-content">
-                    <p class="hero-eyebrow">WE BUILD</p>
-                    <h1 class="hero-title">
-                        <span class="word">DIGITAL</span><br>
-                        <span class="word">EXPERIENCES.</span>
-                    </h1>
-                    <p class="hero-subtext">
-                        "Websites that don't just look good.<br>
-                        They make businesses impossible to ignore."
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#work" class="btn btn-outline magnetic">EXPLORE OUR WORK →</a>
-                        <a href="#offer" class="btn btn-primary magnetic">START YOUR PROJECT →</a>
-                    </div>
-                </div>
-                <div class="scroll-indicator">
-                    <span>SCROLL TO EXPLORE ↓</span>
-                </div>
-            </section>
-
-            <!-- MARQUEE SECTION -->
-            <section class="marquee-section">
-                <div class="marquee-container">
-                    <div class="marquee-content text-reveal">
-                        <span>PREMIUM BUSINESS WEBSITES</span>
-                        <span class="dot"></span>
-                        <span>3D EXPERIENCES</span>
-                        <span class="dot"></span>
-                        <span>SCROLL-DRIVEN DESIGN</span>
-                        <span class="dot"></span>
-                        <span>UI/UX DESIGN</span>
-                        <span class="dot"></span>
-                        <span>E-COMMERCE</span>
-                        <span class="dot"></span>
-                        <span>PREMIUM BUSINESS WEBSITES</span>
-                        <span class="dot"></span>
-                        <span>3D EXPERIENCES</span>
-                        <span class="dot"></span>
-                        <span>SCROLL-DRIVEN DESIGN</span>
-                        <span class="dot"></span>
-                        <span>UI/UX DESIGN</span>
-                        <span class="dot"></span>
-                        <span>E-COMMERCE</span>
-                        <span class="dot"></span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 04: THE PROBLEM -->
-            <section id="problem" class="problem">
-                <div class="huge-bg-text" style="top: 20%;">STORY</div>
-                <div class="problem-container">
-                    <h2 class="problem-title-1 stagger-text">YOUR BUSINESS<br>HAS A <span class="outline-text">STORY.</span></h2>
-                    <h2 class="problem-title-2 stagger-text">BUT DOES YOUR WEBSITE<br>TELL IT?</h2>
-                    
-                    <div class="floating-interfaces">
-                        <div class="floating-item" data-speed="0.8">Instagram</div>
-                        <div class="floating-item" data-speed="1.2">WhatsApp</div>
-                        <div class="floating-item" data-speed="0.5">Google</div>
-                        <div class="floating-item" data-speed="1.5">Website</div>
-                    </div>
-                    
-                    <div class="problem-conclusion">
-                        <p class="problem-sub stagger-text">"Your customers are already online."</p>
-                        <h2 class="problem-title-3 stagger-text">GIVE THEM SOMEWHERE<br>WORTH STAYING.</h2>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 05: SERVICE REVEAL -->
-            <section id="service-reveal" class="service-reveal">
-                <div class="reveal-container">
-                    <h2 class="reveal-text-1">WE DON'T JUST<br>BUILD WEBSITES.</h2>
-                    <h2 class="reveal-text-2">WE BUILD</h2>
-                    <h2 class="reveal-text-3">EXPERIENCES.</h2>
-                    <div class="reveal-words">
-                        <span>DESIGN</span>
-                        <span>MOTION</span>
-                        <span>3D</span>
-                        <span>INTERACTION</span>
-                        <span>CONVERSION</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 06: SERVICES -->
-            <section id="services" class="services">
-                <div class="services-wrapper">
-                    <div class="services-scroll">
-                        <div class="service-card">
-                            <span class="service-num">01</span>
-                            <h3>BUSINESS WEBSITES</h3>
-                            <p>Professional digital presence tailored to your industry.</p>
-                            <div class="card-visual visual-1"></div>
-                        </div>
-                        <div class="service-card">
-                            <span class="service-num">02</span>
-                            <h3>3D EXPERIENCES</h3>
-                            <p>Immersive 3D environments that captivate users.</p>
-                            <div class="card-visual visual-2"></div>
-                        </div>
-                        <div class="service-card">
-                            <span class="service-num">03</span>
-                            <h3>MOTION & SCROLL</h3>
-                            <p>Cinematic scroll-driven storytelling.</p>
-                            <div class="card-visual visual-3"></div>
-                        </div>
-                        <div class="service-card">
-                            <span class="service-num">04</span>
-                            <h3>E-COMMERCE</h3>
-                            <p>High-conversion online stores with premium UX.</p>
-                            <div class="card-visual visual-4"></div>
-                        </div>
-                        <div class="service-card">
-                            <span class="service-num">05</span>
-                            <h3>AI EXPERIENCES</h3>
-                            <p>Intelligent chatbots and automated interactions.</p>
-                            <div class="card-visual visual-5"></div>
-                        </div>
-                        <div class="service-card">
-                            <span class="service-num">06</span>
-                            <h3>LANDING PAGES</h3>
-                            <p>Focused pages designed to turn clicks into clients.</p>
-                            <div class="card-visual visual-6"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 07: FROM IDEA TO EXPERIENCE -->
-            <section id="idea-to-exp" class="idea-to-exp">
-                <div class="css-orb" style="top: 20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);"></div>
-                <div class="idea-container">
-                    <h2 class="idea-text stagger-text">FROM AN IDEA</h2>
-                    <div class="browser-mockup">
-                        <div class="browser-header">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <div class="browser-content">
-                            <div class="step-text" id="step-wireframe">WIRE FRAME</div>
-                            <div class="step-text" id="step-design">DESIGN</div>
-                            <div class="step-text" id="step-motion">MOTION</div>
-                            <div class="step-text" id="step-3d">3D</div>
-                            <div class="step-text" id="step-interaction">INTERACTION</div>
-                            <div class="step-text" id="step-final">FINAL WEBSITE</div>
-                            
-                            <div class="browser-visual"></div>
-                        </div>
-                    </div>
-                    <h2 class="idea-text final">TO AN EXPERIENCE.</h2>
-                </div>
-            </section>
-
-            <!-- SECTION 08: OUR PROCESS -->
-            <section id="process" class="process">
-                <div class="process-container">
-                    <div class="process-line"></div>
-                    
-                    <div class="process-step">
-                        <h3>DISCOVER</h3>
-                        <p>We understand your business,<br>audience and objectives.</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>DEFINE</h3>
-                        <p>We create the digital strategy.</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>DESIGN</h3>
-                        <p>We build the visual identity<br>and user experience.</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>DEVELOP</h3>
-                        <p>We turn the experience<br>into a functional website.</p>
-                    </div>
-                    <div class="process-step">
-                        <h3>LAUNCH</h3>
-                        <p>We deploy, optimise<br>and measure.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 09: SELECTED WORK -->
-            <section id="work" class="work">
-                <div class="work-header">
-                    <h2 class="stagger-text">SELECTED WORK</h2>
-                </div>
-                
-                <div class="work-project">
-                    <div class="project-info">
-                        <h2>PROJECT 01: TERRAIN PROTECTION</h2>
-                        <p class="category">Category: Security • Facility Management</p>
-                        <p class="status">Status: CLIENT PROJECT</p>
-                        <p class="desc">"An interactive corporate website designed to transform a traditional security business into a modern digital brand."</p>
-                        <a href="https://terrainprotection.in/" target="_blank" class="btn btn-outline magnetic">VIEW LIVE WEBSITE →</a>
-                    </div>
-                    <div class="project-visual">
-                        <div class="placeholder-img" style="background: linear-gradient(45deg, #1a1a1a, #333);">TP</div>
-                    </div>
-                </div>
-
-                <div class="work-project">
-                    <div class="project-info">
-                        <h2>PROJECT 02: CALIGO 2026</h2>
-                        <p class="category">Category: Management Fest • Event Experience</p>
-                        <p class="status">Status: PROJECT</p>
-                        <p class="desc">"An immersive digital experience designed for a management fest."</p>
-                        <a href="#" class="btn btn-outline magnetic">VIEW PROJECT →</a>
-                    </div>
-                    <div class="project-visual">
-                        <div class="placeholder-img" style="background: linear-gradient(45deg, #0a0a0a, #2a2a2a);">C26</div>
-                    </div>
-                </div>
-
-                <div class="work-project">
-                    <div class="project-info">
-                        <h2>PROJECT 03: GCA CHEMICALS</h2>
-                        <p class="category">Category: Agriculture • Corporate</p>
-                        <p class="status">Status: CONCEPT / PROTOTYPE</p>
-                        <p class="desc">"An interactive agricultural website concept using scroll-driven plant-growth storytelling."</p>
-                    </div>
-                    <div class="project-visual">
-                        <div class="placeholder-img" style="background: linear-gradient(45deg, #112211, #224422);">GCA</div>
-                    </div>
-                </div>
-
-                <div class="work-project">
-                    <div class="project-info">
-                        <h2>PROJECT 04: TRIPIN</h2>
-                        <p class="category">Category: Travel • Digital Experience</p>
-                        <p class="status">Status: PROJECT / PROTOTYPE</p>
-                    </div>
-                    <div class="project-visual">
-                        <div class="placeholder-img" style="background: linear-gradient(45deg, #111122, #222244);">TRP</div>
-                    </div>
-                </div>
-
-                <div class="work-project">
-                    <div class="project-info">
-                        <h2>PROJECT 05: ERYBL</h2>
-                        <p class="category">Category: Custom PCs • Technology</p>
-                        <p class="status">Status: PROJECT / PROTOTYPE</p>
-                    </div>
-                    <div class="project-visual">
-                        <div class="placeholder-img" style="background: linear-gradient(45deg, #221111, #442222);">ERY</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 10: CASE STUDY -->
-            <section id="case-study" class="case-study">
-                <div class="css-orb" style="top: 50%; right: -20%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(239,68,68,0.1) 0%, rgba(0,0,0,0) 70%);"></div>
-                <div class="case-study-hero">
-                    <h2 class="stagger-text">TERRAIN<br>PROTECTION</h2>
-                    <h3 class="stagger-text">SECURITY,<br>REIMAGINED.</h3>
-                </div>
-                
-                <div class="case-study-visuals">
-                    <div class="visual-mockup desktop"></div>
-                    <div class="visual-mockup mobile"></div>
-                </div>
-
-                <div class="case-study-metrics">
-                    <div class="metric">
-                        <h4>20+</h4>
-                        <p>YEARS</p>
-                    </div>
-                    <div class="metric">
-                        <h4>4,200+</h4>
-                        <p>TRAINED PERSONNEL</p>
-                    </div>
-                    <div class="metric">
-                        <h4>12</h4>
-                        <p>STATES</p>
-                    </div>
-                    <div class="metric">
-                        <h4>800+</h4>
-                        <p>ACTIVE SITES</p>
-                    </div>
-                </div>
-
-                <div class="case-study-conclusion">
-                    <p>"FROM BUSINESS INFORMATION<br>TO DIGITAL EXPERIENCE."</p>
-                    <a href="https://terrainprotection.in/" target="_blank" class="btn btn-primary magnetic">VISIT LIVE WEBSITE →</a>
-                </div>
-            </section>
-
-            <!-- SECTION 11: BEFORE / AFTER -->
-            <section id="before-after" class="before-after">
-                <div class="split-screen">
-                    <div class="split left">
-                        <h2 class="stagger-text">BEFORE</h2>
-                        <p>Traditional digital presence</p>
-                    </div>
-                    <div class="split right">
-                        <h2 class="stagger-text">AFTER</h2>
-                        <p>Interactive digital experience</p>
-                    </div>
-                    <div class="split-divider"></div>
-                </div>
-                <div class="split-text">
-                    <h2 class="diff-text-1 stagger-text">THE DIFFERENCE<br>ISN'T JUST DESIGN.</h2>
-                    <h2 class="diff-text-2 stagger-text">IT'S PERCEPTION.</h2>
-                </div>
-            </section>
-
-            <!-- SECTION 12: WHY NEXORA -->
-            <section id="why-nexora" class="why-nexora">
-                <div class="why-grid">
-                    <div class="why-card">
-                        <span>01</span>
-                        <h3>CUSTOM</h3>
-                        <p>No generic templates.</p>
-                    </div>
-                    <div class="why-card">
-                        <span>02</span>
-                        <h3>INTERACTIVE</h3>
-                        <p>Motion where it matters.</p>
-                    </div>
-                    <div class="why-card">
-                        <span>03</span>
-                        <h3>RESPONSIVE</h3>
-                        <p>Designed for every screen.</p>
-                    </div>
-                    <div class="why-card">
-                        <span>04</span>
-                        <h3>CONVERSION</h3>
-                        <p>Designed to turn visitors<br>into enquiries.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 13: PRICING -->
-            <section id="pricing" class="pricing">
-                <div class="css-orb" style="top: -10%; left: 30%; width: 80vw; height: 40vw; background: radial-gradient(circle, rgba(16,185,129,0.1) 0%, rgba(0,0,0,0) 70%);"></div>
-                <h2 class="pricing-heading stagger-text">CHOOSE YOUR<br>EXPERIENCE.</h2>
-                
-                <div class="pricing-cards">
-                    <div class="price-card">
-                        <h3>STARTER</h3>
-                        <p class="price">₹4,999</p>
-                        <p class="desc">Professional online presence.</p>
-                        <ul>
-                            <li>up to 3 pages</li>
-                            <li>responsive design</li>
-                            <li>contact integration</li>
-                            <li>basic SEO</li>
-                            <li>basic animations</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="price-card featured">
-                        <h3>PROFESSIONAL</h3>
-                        <p class="price">₹9,999</p>
-                        <p class="desc">For growing businesses.</p>
-                        <ul>
-                            <li>5–7 pages</li>
-                            <li>custom UI/UX</li>
-                            <li>advanced animations</li>
-                            <li>WhatsApp integration</li>
-                            <li>SEO setup</li>
-                            <li>analytics</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="price-card">
-                        <h3>EXPERIENCE</h3>
-                        <p class="price">₹19,999+</p>
-                        <p class="desc">For businesses wanting something exceptional.</p>
-                        <ul>
-                            <li>custom 3D</li>
-                            <li>advanced scroll experiences</li>
-                            <li>interactive storytelling</li>
-                            <li>AI integration</li>
-                            <li>advanced animations</li>
-                            <li>premium UI/UX</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="pricing-consult">
-                    <p>NOT SURE WHAT YOU NEED?</p>
-                    <a href="#offer" class="btn btn-outline magnetic">GET A FREE CONSULTATION →</a>
-                </div>
-            </section>
-
-            <!-- SECTION 14: THE OFFER -->
-            <section id="offer" class="offer">
-                <h2 class="offer-title stagger-text">
-                    YOUR WEBSITE<br>
-                    COULD LOOK<br>
-                    LIKE THIS.
-                </h2>
-                
-                <div class="offer-content">
-                    <p>Tell us about your business.</p>
-                    <p class="highlight">We'll create a</p>
-                    <h3 class="highlight-large">FREE HOMEPAGE CONCEPT.</h3>
-                    
-                    <a href="#" class="btn btn-primary magnetic">GET MY FREE CONCEPT →</a>
-                    
-                    <div class="qr-container">
-                        <div class="qr-placeholder"></div>
-                        <p>SCAN TO START</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SECTION 15: FINAL CTA -->
-            <section id="final-cta" class="final-cta">
-                <p class="small-cta">YOUR BUSINESS DESERVES<br>MORE THAN A WEBSITE.</p>
-                <h2 class="huge-cta">IT DESERVES<br>AN EXPERIENCE.</h2>
-                <a href="#offer" class="btn btn-primary magnetic cta-btn">START A PROJECT →</a>
-            </section>
-
-        </div>
-    </main>
-
-    <!-- SECTION 16: FOOTER -->
-    <footer id="site-footer">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <h2>NEXORA</h2>
-                <p>Your Business.<br>Reimagined on the Web.</p>
-            </div>
-            
-            <div class="footer-links">
-                <nav>
-                    <a href="#work">WORK</a>
-                    <a href="#services">SERVICES</a>
-                    <a href="#process">PROCESS</a>
-                    <a href="#why-nexora">ABOUT</a>
-                    <a href="#contact">CONTACT</a>
-                </nav>
-            </div>
-            
-            <div class="footer-social">
-                <nav>
-                    <a href="#">INSTAGRAM</a>
-                    <a href="#">LINKEDIN</a>
-                    <a href="#">FACEBOOK</a>
-                </nav>
-            </div>
-            
-            <div class="footer-contact">
-                <nav>
-                    <a href="#">EMAIL</a>
-                    <a href="#">WHATSAPP</a>
-                </nav>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2026 NEXORA<br>ALL RIGHTS RESERVED.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- GSAP & Lenis & Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="bg-primary text-textMain overflow-x-hidden selection:bg-accent1 selection:text-white">
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor" class="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center text-black text-[8px] font-bold opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Loading Screen -->
+    <div id="loader" class="fixed inset-0 z-[10000] bg-primary flex flex-col items-center justify-center transition-transform duration-1000">
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-4">PIXELCRAFT</h1>
+        <p class="text-textMuted tracking-[0.2em] text-xs md:text-sm uppercase mb-8">Building Digital Experiences</p>
+        <div class="w-64 h-1 bg-surface rounded-full overflow-hidden">
+            <div id="loader-progress" class="h-full bg-accent3 w-0"></div>
+        </div>
+        <p id="loader-text" class="mt-4 text-xs text-textMuted font-mono">01 Loading Experience...</p>
+    </div>
+
+    <!-- Global Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-6 md:px-12 flex justify-between items-center text-sm font-medium">
+        <a href="#" class="text-xl font-bold tracking-tighter hover:text-accent3 transition-colors">PixelCraft</a>
+        
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#services" class="hover:text-textMuted transition-colors relative group">Services
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#work" class="hover:text-textMuted transition-colors relative group">Work
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#process" class="hover:text-textMuted transition-colors relative group">Process
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+            </a>
+            <a href="#pricing" class="hover:text-textMuted transition-colors relative group">Pricing
+                <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all group-hover:w-full"></span>
+            </a>
+        </div>
+        
+        <div class="flex gap-4 items-center">
+            <a href="#contact" class="hidden md:block hover:text-textMuted transition-colors">Contact</a>
+            <a href="#contact" class="px-5 py-2.5 bg-white text-primary rounded-full hover:scale-105 transition-transform duration-300 font-semibold shadow-[0_0_15px_rgba(255,255,255,0.3)]">Start a Project</a>
+        </div>
+    </nav>
+
+    <!-- Floating Side UI -->
+    <div class="hidden lg:flex fixed right-6 top-1/2 -translate-y-1/2 flex-col gap-4 z-40 text-[10px] tracking-[0.2em] font-mono text-textMuted">
+        <a href="#hero" class="side-nav-link hover:text-white transition-colors flex items-center gap-2 group"><span class="w-2 h-[1px] bg-textMuted group-hover:w-4 group-hover:bg-white transition-all"></span> 01 HOME</a>
+        <a href="#work" class="side-nav-link hover:text-white transition-colors flex items-center gap-2 group"><span class="w-2 h-[1px] bg-textMuted group-hover:w-4 group-hover:bg-white transition-all"></span> 02 WORK</a>
+        <a href="#services" class="side-nav-link hover:text-white transition-colors flex items-center gap-2 group"><span class="w-2 h-[1px] bg-textMuted group-hover:w-4 group-hover:bg-white transition-all"></span> 03 SERVICES</a>
+        <a href="#process" class="side-nav-link hover:text-white transition-colors flex items-center gap-2 group"><span class="w-2 h-[1px] bg-textMuted group-hover:w-4 group-hover:bg-white transition-all"></span> 04 PROCESS</a>
+        <a href="#pricing" class="side-nav-link hover:text-white transition-colors flex items-center gap-2 group"><span class="w-2 h-[1px] bg-textMuted group-hover:w-4 group-hover:bg-white transition-all"></span> 05 PRICING</a>
+    </div>
+
+    <!-- WebGL Canvas for Backgrounds -->
+    <canvas id="webgl-canvas" class="fixed inset-0 w-full h-full z-0 pointer-events-none"></canvas>
+
+    <!-- 5. HERO SECTION (Light/Pastel with Aquatic Video) -->
+    <section id="hero" class="min-h-screen flex items-center px-6 md:px-12 pt-24 relative overflow-hidden text-white">
+        <!-- EXACT PEACHWEB HERO VIDEO (Fish/Aquatic) -->
+        <video class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover z-[-1] opacity-90" 
+               loop muted playsinline autoplay 
+               src="https://files.peachworlds.com/website/0e5f237e-0e45-4db9-8798-8e340bff43f0/peachwebsitevideo-2b.mp4"></video>
+        
+        <div class="max-w-4xl w-full relative z-10">
+            <p class="text-[11px] tracking-[0.3em] mb-6 uppercase hero-anim opacity-0 translate-y-4 text-white drop-shadow-md">PIXELCRAFT — DIGITAL EXPERIENCE STUDIO</p>
+            <h1 class="text-5xl md:text-[80px] lg:text-[100px] leading-[0.9] font-bold tracking-tighter mb-8 hero-anim opacity-0 translate-y-8 drop-shadow-lg">
+                Websites<br>
+                That Make<br>
+                Brands<br>
+                Impossible<br>
+                to Ignore.
+            </h1>
+            <p class="text-lg md:text-xl max-w-xl mb-12 hero-anim opacity-0 translate-y-4 drop-shadow-md">
+                Premium websites, interactive experiences and digital identities designed to turn attention into action.
+            </p>
+            <div class="flex flex-wrap gap-4 hero-anim opacity-0 translate-y-4">
+                <a href="#contact" class="px-8 py-4 bg-white text-primary rounded-full font-semibold hover:scale-105 transition-transform duration-300 shadow-xl">Start Your Project</a>
+                <a href="#work" class="px-8 py-4 border border-white/40 rounded-full font-semibold hover:bg-white/20 transition-colors duration-300 backdrop-blur-md">Explore Our Work</a>
+            </div>
+        </div>
+    </section>
+
+        <!-- 8. INTRODUCTION SECTION -->
+        <section class="py-32 px-6 md:px-12 bg-secondary/80 backdrop-blur-md relative border-t border-white/5">
+            <div class="max-w-5xl mx-auto">
+                <p class="text-xs tracking-[0.2em] text-accent1 mb-8 uppercase">WHAT WE DO</p>
+                <h2 id="intro-heading" class="text-4xl md:text-6xl lg:text-[80px] font-bold tracking-tighter leading-tight mb-12">
+                    We turn ordinary websites into digital experiences.
+                </h2>
+                <p class="text-xl md:text-2xl text-textMuted max-w-3xl leading-relaxed">
+                    PixelCraft combines strategy, design, motion and technology to create websites that look distinctive, communicate clearly and perform commercially.
+                </p>
+            </div>
+        </section>
+
+        <!-- 9. FEATURE / CAPABILITY SECTION -->
+        <section class="py-32 px-6 md:px-12">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tighter mb-20">Design is more than decoration.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-3xl overflow-hidden">
+                <div class="capability-card bg-surface p-12 md:p-20 group relative overflow-hidden cursor-none">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent1/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="text-textMuted text-sm font-mono block mb-8">01</span>
+                    <h3 class="text-4xl font-bold group-hover:text-accent1 transition-colors duration-300">Strategy</h3>
+                    <div class="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-8 transition-all duration-500 text-accent1">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+                <div class="capability-card bg-surface p-12 md:p-20 group relative overflow-hidden cursor-none">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent2/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="text-textMuted text-sm font-mono block mb-8">02</span>
+                    <h3 class="text-4xl font-bold group-hover:text-accent2 transition-colors duration-300">Design</h3>
+                    <div class="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-8 transition-all duration-500 text-accent2">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+                <div class="capability-card bg-surface p-12 md:p-20 group relative overflow-hidden cursor-none">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent3/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="text-textMuted text-sm font-mono block mb-8">03</span>
+                    <h3 class="text-4xl font-bold group-hover:text-accent3 transition-colors duration-300">Development</h3>
+                    <div class="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-8 transition-all duration-500 text-accent3">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+                <div class="capability-card bg-surface p-12 md:p-20 group relative overflow-hidden cursor-none">
+                    <div class="absolute inset-0 bg-gradient-to-br from-accent4/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <span class="text-textMuted text-sm font-mono block mb-8">04</span>
+                    <h3 class="text-4xl font-bold group-hover:text-accent4 transition-colors duration-300">Growth</h3>
+                    <div class="absolute bottom-12 right-12 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-8 transition-all duration-500 text-accent4">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. INTERACTIVE 3D SHOWCASE -->
+        <section id="work" class="py-32 px-6 md:px-12 bg-secondary/90">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-24 max-w-2xl">Digital experiences, built to be experienced.</h2>
+            
+            <div class="space-y-32">
+                <!-- Project 01 -->
+                <div class="project-card group relative cursor-none">
+                    <div class="w-full aspect-video md:aspect-[21/9] bg-surface rounded-3xl overflow-hidden relative border border-white/5">
+                        <div class="absolute inset-0 bg-gradient-to-r from-accent1/30 to-accent3/30 opacity-50 mix-blend-screen group-hover:scale-105 transition-transform duration-1000"></div>
+                        <div class="absolute bottom-8 left-8 md:bottom-12 md:left-12 z-10">
+                            <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs font-mono mb-4 inline-block">PROJECT 01</span>
+                            <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-2">Terrain Protection</h3>
+                            <p class="text-textMuted text-lg">Corporate Website</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 02 -->
+                <div class="project-card group relative cursor-none md:w-[80%] md:ml-auto">
+                    <div class="w-full aspect-video md:aspect-[16/9] bg-surface rounded-3xl overflow-hidden relative border border-white/5">
+                        <div class="absolute inset-0 bg-gradient-to-r from-accent2/30 to-accent4/30 opacity-50 mix-blend-screen group-hover:scale-105 transition-transform duration-1000"></div>
+                        <div class="absolute bottom-8 left-8 md:bottom-12 md:left-12 z-10">
+                            <span class="px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs font-mono mb-4 inline-block">PROJECT 02</span>
+                            <h3 class="text-3xl md:text-5xl font-bold tracking-tight mb-2">CALIGO 2026</h3>
+                            <p class="text-textMuted text-lg">Event / Management Fest Website</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. SERVICES SECTION -->
+        <section id="services" class="py-32 px-6 md:px-12">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-20 max-w-3xl">Everything you need to build your digital presence.</h2>
+            <div class="border-t border-white/10">
+                <div class="service-row group border-b border-white/10 py-8 flex flex-col md:flex-row md:items-center justify-between cursor-none hover:bg-white/[0.02] transition-colors px-4 -mx-4 rounded-xl">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <span class="text-textMuted font-mono">01</span>
+                        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight group-hover:text-accent3 transition-colors">Website Design</h3>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+                <div class="service-row group border-b border-white/10 py-8 flex flex-col md:flex-row md:items-center justify-between cursor-none hover:bg-white/[0.02] transition-colors px-4 -mx-4 rounded-xl">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <span class="text-textMuted font-mono">02</span>
+                        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight group-hover:text-accent3 transition-colors">Development</h3>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+                <div class="service-row group border-b border-white/10 py-8 flex flex-col md:flex-row md:items-center justify-between cursor-none hover:bg-white/[0.02] transition-colors px-4 -mx-4 rounded-xl">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <span class="text-textMuted font-mono">03</span>
+                        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight group-hover:text-accent3 transition-colors">E-Commerce</h3>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+                <div class="service-row group border-b border-white/10 py-8 flex flex-col md:flex-row md:items-center justify-between cursor-none hover:bg-white/[0.02] transition-colors px-4 -mx-4 rounded-xl">
+                    <div class="flex items-center gap-8 mb-4 md:mb-0">
+                        <span class="text-textMuted font-mono">04</span>
+                        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight group-hover:text-accent3 transition-colors">3D & Interactive</h3>
+                    </div>
+                    <div class="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 15. 3D / IMMERSIVE SECTION (Spacer for WebGL to show through) -->
+        <section class="h-screen w-full relative flex items-center justify-center bg-transparent pointer-events-none">
+            <div class="text-center z-10 bg-primary/20 backdrop-blur-sm p-12 rounded-3xl border border-white/10 pointer-events-auto">
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-tight">
+                    Why settle for a website<br>when you can create<br>an experience?
+                </h2>
+                <a href="#contact" class="px-8 py-4 bg-accent1 text-white rounded-full font-semibold hover:bg-accent1/80 transition-colors inline-block shadow-[0_0_30px_rgba(139,92,246,0.5)]">Build Something Different</a>
+            </div>
+        </section>
+
+        <!-- 16. PRICING SECTION -->
+        <section id="pricing" class="py-32 px-6 md:px-12 bg-secondary">
+            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter mb-20 text-center">Choose your starting point.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Basic -->
+                <div class="bg-surface p-8 rounded-3xl border border-white/10 hover:border-white/30 transition-colors">
+                    <h3 class="text-xl font-bold mb-2">BASIC</h3>
+                    <div class="text-3xl font-bold mb-4">₹3,999</div>
+                    <p class="text-textMuted text-sm mb-8 h-10">For small businesses and personal projects.</p>
+                    <ul class="space-y-4 mb-8 text-sm border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2">✓ 1–3 pages</li>
+                        <li class="flex items-center gap-2">✓ Responsive design</li>
+                        <li class="flex items-center gap-2">✓ Contact form</li>
+                        <li class="flex items-center gap-2">✓ Basic SEO</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 text-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-colors">Get Started</a>
+                </div>
+                <!-- Professional -->
+                <div class="bg-surface p-8 rounded-3xl border border-accent3 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)] transition-all relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-accent3 text-primary text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
+                    <h3 class="text-xl font-bold mb-2">PROFESSIONAL</h3>
+                    <div class="text-3xl font-bold mb-4">₹5,999</div>
+                    <p class="text-textMuted text-sm mb-8 h-10">For growing businesses.</p>
+                    <ul class="space-y-4 mb-8 text-sm border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2">✓ Up to 5 pages</li>
+                        <li class="flex items-center gap-2">✓ Custom design</li>
+                        <li class="flex items-center gap-2">✓ SEO setup</li>
+                        <li class="flex items-center gap-2">✓ Lead forms</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 text-center bg-white text-primary font-bold rounded-full hover:scale-105 transition-transform">Choose Pro</a>
+                </div>
+                <!-- Premium -->
+                <div class="bg-surface p-8 rounded-3xl border border-white/10 hover:border-white/30 transition-colors">
+                    <h3 class="text-xl font-bold mb-2">PREMIUM</h3>
+                    <div class="text-3xl font-bold mb-4">₹9,999+</div>
+                    <p class="text-textMuted text-sm mb-8 h-10">For brands wanting an advanced experience.</p>
+                    <ul class="space-y-4 mb-8 text-sm border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2">✓ Custom UI/UX</li>
+                        <li class="flex items-center gap-2">✓ Advanced animations</li>
+                        <li class="flex items-center gap-2">✓ Interactive sections</li>
+                        <li class="flex items-center gap-2">✓ Performance optimization</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 text-center border border-white/20 rounded-full hover:bg-white hover:text-black transition-colors">Start Premium</a>
+                </div>
+                <!-- Custom -->
+                <div class="bg-gradient-to-br from-surface to-primary p-8 rounded-3xl border border-white/10 hover:border-accent1 transition-colors">
+                    <h3 class="text-xl font-bold mb-2">CUSTOM</h3>
+                    <div class="text-3xl font-bold mb-4">Let's Talk</div>
+                    <p class="text-textMuted text-sm mb-8 h-10">For 3D experiences and complex apps.</p>
+                    <ul class="space-y-4 mb-8 text-sm border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2 text-accent4">✦ Custom architecture</li>
+                        <li class="flex items-center gap-2 text-accent4">✦ 3D/WebGL rendering</li>
+                        <li class="flex items-center gap-2 text-accent4">✦ E-commerce</li>
+                        <li class="flex items-center gap-2 text-accent4">✦ Custom integrations</li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 text-center bg-accent1 text-white font-bold rounded-full hover:shadow-[0_0_15px_rgba(139,92,246,0.5)] transition-all">Book a Call</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 18 & 19. CTA & FOOTER -->
+        <footer id="contact" class="pt-32 pb-12 px-6 md:px-12 relative overflow-hidden border-t border-white/10 text-white">
+            <!-- EXACT PEACHWEB FOOTER VIDEO (Jellyfish/Deep Blue) -->
+            <video class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover z-[-1]" 
+                   loop muted playsinline autoplay 
+                   src="https://files.peachworlds.com/website/0e5f237e-0e45-4db9-8798-8e340bff43f0/peachwebsitevideo-2b.mp4"></video>
+            
+            <div class="max-w-4xl mx-auto text-center mb-32 relative z-10 drop-shadow-2xl">
+                <h2 class="text-5xl md:text-[80px] font-bold tracking-tighter leading-[0.9] mb-8">
+                    Your next website<br>should feel different.
+                </h2>
+                <p class="text-xl text-white/90 mb-12">Let's build something people remember.</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="#" class="px-8 py-4 bg-white text-primary rounded-full font-bold hover:scale-105 transition-transform duration-300 shadow-xl">Start Your Project</a>
+                    <a href="#" class="px-8 py-4 border border-white/40 rounded-full font-semibold hover:bg-white/20 transition-colors backdrop-blur-md">Book a Call</a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-12 border-t border-white/20 pt-16 relative z-10 bg-black/20 backdrop-blur-lg rounded-3xl p-8">
+                <div class="col-span-2">
+                    <h3 class="text-2xl font-bold tracking-tighter mb-4">PIXELCRAFT</h3>
+                    <p class="text-textMuted text-sm max-w-xs">Websites That Make Brands Impossible to Ignore.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-mono text-textMuted mb-6">SERVICES</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Website Design</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">E-Commerce</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">3D Websites</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-mono text-textMuted mb-6">COMPANY</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Work</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Process</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-mono text-textMuted mb-6">SOCIAL</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">LinkedIn</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-textMuted relative z-10">
+                <p>© 2026 PixelCraft. All rights reserved.</p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
     <script src="js/main.js"></script>
 </body>
 </html>
