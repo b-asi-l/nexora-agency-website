@@ -21,44 +21,14 @@ interface TeamMember {
 
 const team: TeamMember[] = [
   {
-    name: "Abhai Prathap",
+    name: "Amal Raj",
     role: "Chief Executive Officer",
     title: "CEO & Co-Founder",
-    image: "/team/abhai_prathap.jpg",
+    image: "/team/amal_raj.jpg",
     bio: "Leading PixelCraft's vision, global strategy, and breakthrough WebGL interactive design capabilities for brands worldwide.",
     glow: "from-fuchsia-500/20 to-purple-600/10",
     borderGlow: "group-hover:border-fuchsia-500/60",
     badgeBg: "bg-fuchsia-500/10 text-fuchsia-300 border-fuchsia-500/30",
-    socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      email: "mailto:abhai@pixelcraft.agency",
-    },
-  },
-  {
-    name: "Ananthapadmanabhan S.",
-    role: "Operation & Logistics Manager",
-    title: "Operations & Logistics Manager",
-    image: "/team/ananthapadmanabhan.jpg",
-    bio: "Directing operational efficiency, production sprints, client delivery timelines, and multi-disciplinary logistics.",
-    glow: "from-cyan-500/20 to-blue-600/10",
-    borderGlow: "group-hover:border-cyan-400/60",
-    badgeBg: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
-    socials: {
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-      email: "mailto:anantha@pixelcraft.agency",
-    },
-  },
-  {
-    name: "Amal Raj",
-    role: "Chief Marketing Officer",
-    title: "CMO & Growth Director",
-    image: "/team/amal_raj.jpg",
-    bio: "Spearheading brand narrative, market expansion, viral digital campaigns, and strategic brand positioning.",
-    glow: "from-pink-500/20 to-rose-600/10",
-    borderGlow: "group-hover:border-pink-500/60",
-    badgeBg: "bg-pink-500/10 text-pink-300 border-pink-500/30",
     socials: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
@@ -67,13 +37,13 @@ const team: TeamMember[] = [
   },
   {
     name: "Alen Mathews",
-    role: "Managing Director",
-    title: "Managing Director (MD)",
+    role: "Operation & Logistics Manager",
+    title: "Operation & Logistics Manager",
     image: "/team/alen_mathews.jpg",
-    bio: "Overseeing executive corporate execution, enterprise client relations, partnership ecosystems, and governance.",
-    glow: "from-violet-500/20 to-indigo-600/10",
-    borderGlow: "group-hover:border-violet-500/60",
-    badgeBg: "bg-violet-500/10 text-violet-300 border-violet-500/30",
+    bio: "Directing operational efficiency, production sprints, client delivery timelines, and multi-disciplinary logistics.",
+    glow: "from-cyan-500/20 to-blue-600/10",
+    borderGlow: "group-hover:border-cyan-400/60",
+    badgeBg: "bg-cyan-500/10 text-cyan-300 border-cyan-500/30",
     socials: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
@@ -81,10 +51,40 @@ const team: TeamMember[] = [
     },
   },
   {
+    name: "Ananthapadmanabhan S.",
+    role: "Chief Marketing Officer",
+    title: "CMO & Growth Director",
+    image: "/team/ananthapadmanabhan.jpg",
+    bio: "Spearheading brand narrative, market expansion, viral digital campaigns, and strategic brand positioning.",
+    glow: "from-pink-500/20 to-rose-600/10",
+    borderGlow: "group-hover:border-pink-500/60",
+    badgeBg: "bg-pink-500/10 text-pink-300 border-pink-500/30",
+    socials: {
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:anantha@pixelcraft.agency",
+    },
+  },
+  {
     name: "Basil Mathew",
+    role: "Managing Director",
+    title: "Managing Director (MD)",
+    image: "/team/basil_mathew.jpg",
+    bio: "Overseeing executive corporate execution, enterprise client relations, partnership ecosystems, and governance.",
+    glow: "from-violet-500/20 to-indigo-600/10",
+    borderGlow: "group-hover:border-violet-500/60",
+    badgeBg: "bg-violet-500/10 text-violet-300 border-violet-500/30",
+    socials: {
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
+      email: "mailto:basil@pixelcraft.agency",
+    },
+  },
+  {
+    name: "Abhai Prathap",
     role: "Chief Financial Officer",
     title: "CFO & Head of Capital",
-    image: "/team/basil_mathew.jpg",
+    image: "/team/abhai_prathap.jpg",
     bio: "Managing capital allocation, fiscal growth modeling, international financial systems, and investment scaling.",
     glow: "from-emerald-500/20 to-teal-600/10",
     borderGlow: "group-hover:border-emerald-500/60",
@@ -92,7 +92,7 @@ const team: TeamMember[] = [
     socials: {
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
-      email: "mailto:basil@pixelcraft.agency",
+      email: "mailto:abhai@pixelcraft.agency",
     },
   },
 ];
@@ -121,7 +121,7 @@ export default function Team() {
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {team.map((member, index) => (
           <motion.div
-            key={member.role}
+            key={member.name}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

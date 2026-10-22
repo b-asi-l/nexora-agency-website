@@ -107,11 +107,11 @@ export default function FooterCTA() {
         <div>
           <p className="mb-4 text-xs font-bold uppercase tracking-wider text-white/40">Executive Leadership</p>
           <div className="space-y-2">
-            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">CEO &amp; Founder</a>
-            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">Operations &amp; Logistics Manager</a>
-            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">Chief Marketing Officer</a>
-            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">Managing Director</a>
-            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">Chief Financial Officer</a>
+            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">CEO &amp; Co-Founder (Amal Raj)</a>
+            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">Operation &amp; Logistics (Alen Mathews)</a>
+            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">CMO &amp; Growth (Ananthapadmanabhan S.)</a>
+            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">Managing Director (Basil Mathew)</a>
+            <a href="#team" className="block text-sm text-white/60 hover:text-white transition-colors">CFO &amp; Capital (Abhai Prathap)</a>
           </div>
         </div>
 
